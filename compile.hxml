@@ -29,16 +29,16 @@
 --each
 
 --next
--js dist/Luna_PicWindow.js
+-js dist/Luna_GamePause.js
 --next
--js ../games/LunaTechsMZ/js/plugins/Luna_PicWindow.js
+-js ../games/LunaTechsMZ/js/plugins/Luna_GamePause.js
 
 --next 
 -D compileMV
--js dist/Luna_PicWindowMV.js
+-js dist/Luna_GamePauseMV.js
 --next
 -D compileMV
--js ../games/LunaTechsMZ/js/plugins/Luna_PicWindowMV.js
+-js ../games/LunaTechsMZ/js/plugins/Luna_GamePauseMV.js
 
 
 --cmd haxe -D gamePath=../games/LunaTechsMZ --run CleanJs

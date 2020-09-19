@@ -1,58 +1,22 @@
 /*:
 @author LunaTechs - Kino
-@plugindesc This plugin allows you to open up a picture window Phoenix Wright style<LunaPicWindow>.
+@plugindesc This plugin allows you to pause the game, stopping the clock <LunaGamePause>.
 
 @target MV MZ
 
-* @param x
-* @text Window X Position
-* @desc Picture window x position.
-* @default 283
-*
-* @param y
-* @text Window Y Position
-* @desc Picture window y position.
-* @default 150
-*
-* @param width
-* @text Window Width
-* @desc Picture window width.
-* @default 250
-*
-* @param height
-* @text Window Height
-* @desc Picture window height.
-* @default 250
+@param pauseButton
+@text Pause Button
+@default p
 
-@command showPicWindow
-@text Show Picture Window
-@desc Shows the picture window with the designated image file from your picture folder.
-@arg fileName
-
-@command showWindow
-@text Show Picture Window
-@text Show Window
-@desc Shows the picture window without updating the image file.
-
-@command closeWindow
-@text Close Window
-@desc Closes the picture window.
-
+@param pauseText
+@text Pause Text
+@default Pause
 
 @help
-This plugin allows you to have a press start button before the title screen information.
-
-=====Script Calls=====
-
-Shows the picture by name in the picture window.
-LunaPictureWindow.showPic(imageName);
-
-Shows the window without updating the picture.
-LunaPictureWindow.show();
+This plugin allows you to pause the game, stopping the clock. 
 
 
-Hides the picture window by 
-LunaPictureWindow.hide();
+
 
 MIT License
 Copyright (c) 2020 LunaTechsDev
