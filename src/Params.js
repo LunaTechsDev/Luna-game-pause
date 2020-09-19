@@ -6,10 +6,12 @@
 
 @param pauseButton
 @text Pause Button
+@description the button that will be used to pause the game.
 @default p
 
 @param pauseText
 @text Pause Text
+@description The Text that will be shown when the game is paused.
 @default Pause
 
 @help
