@@ -1,3 +1,3 @@
-# Luna Commands
+# Luna Pic Window
 ### Author LunaTechs - Kino
-> A plugin that allows you to create commands and alias them within RPGMakerMV/MZ.
+> This plugin allows you to open up a picture window Phoenix Wright style within RPGMakerMV/MZ.
