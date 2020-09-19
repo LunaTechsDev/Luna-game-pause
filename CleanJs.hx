@@ -64,8 +64,8 @@ class CleanJs {
         }
       }).join("\n");
 
-      // final newContent = fileNameStr + buildDate + madeWithStr + attributionStr + "\n" + cleanContents;
-      final newContent = cleanContents;
+      final newContent = fileNameStr + buildDate + madeWithStr + attributionStr + "\n" + cleanContents;
+      // final newContent = cleanContents;
       File.write(filePath).writeString(newContent);
       var gamePath: String = generatePluginGamePath();
       trace(gamePath);
