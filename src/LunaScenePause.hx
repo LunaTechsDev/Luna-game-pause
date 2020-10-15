@@ -14,9 +14,11 @@ class LunaScenePause extends Scene_MenuBase {
   }
 
   public function createPauseWindow() {
-    this._pauseWindow = new LunaPauseWindow(cast Graphics.width / 2, cast Graphics.height / 2, 100, 75);
-    this.addWindow(this._pauseWindow);
     var params = Main.params();
+    this._pauseWindow = new LunaPauseWindow(cast((Graphics.width / 2) - (params.pauseWidth / 2)), cast((Graphics.height / 2)
+      - (params.pauseHeight / 2)), params.pauseWidth, params.pauseHeight);
+    this.addWindow(this._pauseWindow);
+
     this._pauseWindow.setPauseText(params.pauseText);
     this._pauseWindow.refresh();
   }

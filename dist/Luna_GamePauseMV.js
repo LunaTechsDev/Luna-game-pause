@@ -2,7 +2,7 @@
 // Luna_GamePauseMV.js
 //=============================================================================
 //=============================================================================
-// Build Date: 2020-09-19 19:40:56
+// Build Date: 2020-10-15 18:54:20
 //=============================================================================
 //=============================================================================
 // Made with LunaTea -- Haxe
@@ -17,11 +17,23 @@
 
 @param pauseButton
 @text Pause Button
+@description the button that will be used to pause the game.
 @default p
 
 @param pauseText
 @text Pause Text
+@description The Text that will be shown when the game is paused.
 @default Pause
+
+@param pauseWidth
+@text Pause Width
+@desc The width of the pause window
+@default 100
+
+@param pauseHeight
+@text Pause Height
+@desc The height of the pause window
+@default 75
 
 @help
 This plugin allows you to pause the game, stopping the clock. 
@@ -108,9 +120,9 @@ class LunaScenePause extends Scene_MenuBase {
 		this.createPauseWindow()
 	}
 	createPauseWindow() {
-		this._pauseWindow = new LunaPauseWindow(Graphics.width / 2,Graphics.height / 2,100,75)
-		this.addWindow(this._pauseWindow)
 		let params = LunaGamePause.params()
+		this._pauseWindow = new LunaPauseWindow(Graphics.width / 2 - params.pauseWidth / 2,Graphics.height / 2 - params.pauseHeight / 2,params.pauseWidth,params.pauseHeight)
+		this.addWindow(this._pauseWindow)
 		this._pauseWindow.setPauseText(params.pauseText)
 		this._pauseWindow.refresh()
 	}
@@ -139,7 +151,8 @@ class LunaGamePause {
 		}
 		let plugin = _g[0]
 		let params = plugin.parameters
-		LunaGamePause.LGParams = { pauseButton : params["pauseButton"], pauseText : params["pauseText"]}
+		let tmp = parseInt(params["pauseWidth"],10)
+		LunaGamePause.LGParams = { pauseButton : params["pauseButton"], pauseText : params["pauseText"], pauseWidth : tmp, pauseHeight : parseInt(params["pauseHeight"],10)}
 		
 //=============================================================================
 // Graphics

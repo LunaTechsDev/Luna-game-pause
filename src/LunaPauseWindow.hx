@@ -23,10 +23,6 @@ class LunaPauseWindow extends Window_Base {
   }
 
   public function paintPause() {
-    var difference = this.textWidth(this._pauseText) - this.width;
-    if (difference > 0) {
-      this.move(this.x, this.y, this.width + difference, this.height);
-    }
     this.drawText(this._pauseText, 0, 0, this.contentsWidth(), 'center');
   }
 

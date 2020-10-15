@@ -18,6 +18,8 @@ using core.NumberExtensions;
 typedef LGParams = {
   var pauseButton: String;
   var pauseText: String;
+  var pauseWidth: Int;
+  var pauseHeight: Int;
 }
 
 @:native('LunaGamePause')
@@ -31,7 +33,9 @@ class Main {
     var params = plugin.parameters;
     LGParams = {
       pauseButton: params['pauseButton'],
-      pauseText: params['pauseText']
+      pauseText: params['pauseText'],
+      pauseWidth: Fn.parseIntJs(params['pauseWidth']),
+      pauseHeight: Fn.parseIntJs(params['pauseHeight'])
     };
 
     // Handles Frame Count

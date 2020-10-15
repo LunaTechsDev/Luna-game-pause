@@ -14,6 +14,16 @@
 @description The Text that will be shown when the game is paused.
 @default Pause
 
+@param pauseWidth
+@text Pause Width
+@desc The width of the pause window
+@default 100
+
+@param pauseHeight
+@text Pause Height
+@desc The height of the pause window
+@default 75
+
 @help
 This plugin allows you to pause the game, stopping the clock. 
 
