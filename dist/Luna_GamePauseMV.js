@@ -2,7 +2,7 @@
 // Luna_GamePauseMV.js
 //=============================================================================
 //=============================================================================
-// Build Date: 2020-10-15 18:54:20
+// Build Date: 2021-02-28 14:36:37
 //=============================================================================
 //=============================================================================
 // Made with LunaTea -- Haxe
@@ -178,6 +178,14 @@ class LunaGamePause {
 		LunaGamePause.listener.on("pause",function() {
 			LunaGamePause.pauseGame()
 		})
+		let _Window_Command_initialize = Window_Command.prototype.initialize
+		Window_Command.prototype.initialize = function(x,y) {
+			if(this._windowContentsSprite == null) {
+				this._list = []
+				Window_Base.prototype.initialize.call(this,0,0,0,0)
+			}
+			_Window_Command_initialize.call(this,x,y)
+		}
 	}
 	static pauseGame() {
 		SceneManager.push(LunaScenePause)
@@ -189,6 +197,19 @@ class LunaGamePause {
 $hx_exports["LunaGamePause"] = LunaGamePause
 LunaGamePause.__name__ = true
 Math.__name__ = true
+class Window_$Command extends Window_Command {
+	constructor(x,y) {
+		super(x,y);
+	}
+	initialize(x,y) {
+		if(this._windowContentsSprite == null) {
+			this._list = []
+			Window_Base.prototype.initialize.call(this,0,0,0,0)
+		}
+		_Window_Command_initialize.call(this,x,y)
+	}
+}
+Window_$Command.__name__ = true
 class haxe_iterators_ArrayIterator {
 	constructor(array) {
 		this.current = 0
@@ -300,18 +321,6 @@ js_Boot.__name__ = true
 class _$LTGlobals_$ {
 }
 _$LTGlobals_$.__name__ = true
-class utils_Fn {
-	static proto(obj) {
-		return obj.prototype;
-	}
-	static updateProto(obj,fn) {
-		return (fn)(obj.prototype);
-	}
-	static updateEntity(obj,fn) {
-		return (fn)(obj);
-	}
-}
-utils_Fn.__name__ = true
 if(typeof(performance) != "undefined" ? typeof(performance.now) == "function" : false) {
 	HxOverrides.now = performance.now.bind(performance)
 }

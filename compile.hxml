@@ -41,5 +41,6 @@
 -js ../games/LunaTechsMZ/js/plugins/Luna_GamePauseMV.js
 
 
+# --cmd 'npx napkin'
 --cmd haxe -D gamePath=../games/LunaTechsMZ --run CleanJs
 

@@ -2,7 +2,7 @@
 // Luna_GamePause.js
 //=============================================================================
 //=============================================================================
-// Build Date: 2020-10-15 18:54:20
+// Build Date: 2021-02-28 14:36:37
 //=============================================================================
 //=============================================================================
 // Made with LunaTea -- Haxe
@@ -301,18 +301,6 @@ js_Boot.__name__ = true
 class _$LTGlobals_$ {
 }
 _$LTGlobals_$.__name__ = true
-class utils_Fn {
-	static proto(obj) {
-		return obj.prototype;
-	}
-	static updateProto(obj,fn) {
-		return (fn)(obj.prototype);
-	}
-	static updateEntity(obj,fn) {
-		return (fn)(obj);
-	}
-}
-utils_Fn.__name__ = true
 if(typeof(performance) != "undefined" ? typeof(performance.now) == "function" : false) {
 	HxOverrides.now = performance.now.bind(performance)
 }

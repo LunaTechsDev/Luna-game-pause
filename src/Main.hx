@@ -1,8 +1,10 @@
+import macros.FnMacros;
 import Types.LGPEvents;
 import js.html.KeyboardEvent;
 import js.Browser;
 import rm.core.Graphics;
 import rm.core.Stage;
+import rm.windows.Window_Command as RmWindow_Command;
 import rm.managers.SceneManager;
 import pixi.interaction.EventEmitter;
 import core.Amaryllis;
@@ -69,6 +71,9 @@ class Main {
     listener.on(LGPEvents.PAUSE, () -> {
       pauseGame();
     });
+    #if compileMV
+    FnMacros.jsPatch(true, RmWindow_Command, Window_Command);
+    #end
   }
 
   public static function pauseGame() {
